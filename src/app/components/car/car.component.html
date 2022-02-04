@@ -1,0 +1,19 @@
+<!-- <h2 *ngIf="cars; else noCar">{{title}}</h2>
+<ng-template #noCar>  //ancak çağrıldığı zaman aktifleşir.
+   Araba Bulunamadı
+</ng-template> -->
+
+<div class="row">
+    <div *ngFor="let car of cars" class="card" style="width: 18rem;">
+        <!-- [src]="car.imageUrl" yazarak veritabanındaki fotoğrafları çeker. -->
+         <img src="{{car.imageUrl}}" class="card-img-top" height="180 px" > 
+        <div class="card-body">
+          <h4 class="card-title">{{car.description}} </h4>  <!-- currency para formatı için -->
+          <h6>Günlük fiyat: {{car.dailyPrice }} TL</h6>
+      
+         <a class="btn btn-primary" routerLink="/rental/{{car.id}}">Kirala</a> 
+      ><a class="btn btn-primary" routerLink="/cardetail/{{car.id}}">Detaylar</a> 
+      
+        </div>
+      </div>
+</div>

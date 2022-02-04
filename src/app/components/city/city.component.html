@@ -1,0 +1,19 @@
+<!-- <h2>{{title}}</h2>
+ <ul class="list-group" *ngFor="let city of cities">
+    <li class="list-group-item">{{city.name}}</li>
+</ul>  -->
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info">
+      {{title}}
+    </li>
+<li
+      (click)="setCurrentCity(city)"
+      routerLink="city/{{city.id}}"
+      *ngFor="let city of cities "
+      [class]="getCurrentCity(city)"
+     
+    >
+      {{ city.name }}
+    </li>
+  </ul> 

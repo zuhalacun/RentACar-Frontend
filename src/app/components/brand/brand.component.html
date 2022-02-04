@@ -1,0 +1,29 @@
+<!-- 
+<ul class="list-group">
+    <li class="list-group-item list-group-item-success">
+       <input
+        [(ngModel)]="filterText"
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Marka ismi giriniz."
+      />
+    </li>
+    <li class="list-group-item list-group-item-success">
+      {{ filterText }}
+    </li> -->
+    <ul class="list-group">
+    <li routerLink="" class="list-group-item list-group-item-info">
+      Tüm Markalar
+    </li>
+  
+    <li
+      (click)="setCurrentBrand(brand)"
+      routerLink="brand/{{brand.id}}"
+      *ngFor="let brand of brands | filterBrandsPipe:filterText"
+      [class]="getCurrentBrand(brand)"
+     
+    >
+      {{ brand.name }}
+    </li>
+  </ul> 
